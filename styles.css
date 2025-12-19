@@ -770,7 +770,7 @@ body::before {
   display: flex;
   align-items: flex-start;
   gap: 30px; /* відстань між текстом і ET */
-  margin-left: -40px; /* РУЧНИЙ ЗСУВ ВЛІВО */
+  margin-left: -30px; /* РУЧНИЙ ЗСУВ ВЛІВО */
   margin-bottom: 30px;
 }
 

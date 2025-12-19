@@ -1,0 +1,838 @@
+/* =========================================
+   RESET
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: white;
+  overflow-x: hidden;
+  background: #0b0b0b;
+  position: relative;
+}
+
+/* ЄДИНИЙ ФОН НА ВЕСЬ САЙТ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    radial-gradient(circle at 50% 15%,
+      rgba(80, 80, 80, 0.45),
+      rgba(10, 10, 10, 1) 60%),
+    radial-gradient(circle at 20% 85%,
+      rgba(60, 60, 60, 0.25),
+      rgba(0, 0, 0, 0) 55%),
+    repeating-linear-gradient(0deg,
+      rgba(255,255,255,0.025) 0 1px,
+      transparent 1px 3px),
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,0.025) 0 1px,
+      transparent 1px 3px);
+
+  background-color: #0b0b0b;
+  background-blend-mode: screen, normal, overlay, overlay;
+}
+/* =========================================
+   GLOBAL LAYOUT
+========================================= */
+
+.page {
+    width: 100%;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.section-narrow {
+    width: min(76%, 1280px);
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .hero-wrapper {
+    margin-bottom: 200px;
+}
+}
+
+.hero-16x9 {
+    width: min(90vw, 1600px);
+    aspect-ratio: 16/9;
+
+ 
+    position: relative;
+    overflow: hidden;
+}
+
+/* grain */
+
+/* hero text */
+/* HERO BASE */
+.hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    background: transparent;
+}
+
+.hero-inner {
+    position: relative;
+    width: 90%;
+    height: 100%;
+}
+
+
+/* "feel" — маленьке слово у верхньому лівому куті */
+.hero-feel {
+    font-family: "Inter", sans-serif;
+    font-size: 120px;
+    font-weight: 900;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 5;
+}
+
+
+/* "VISUAL" — величезне розмите слово заднім планом */
+.hero-visual {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-family: "Anton", sans-serif;
+    font-size: 400px;
+    font-weight: 900;
+
+    color: #e64430;
+    opacity: 0.85;
+
+    filter: blur(20px);
+    letter-spacing: 15px;
+    white-space: nowrap;
+
+    z-index: 1;
+}
+
+
+/* "DESIGN" — білий текст поверху */
+.hero-design {
+    font-family: "Anton", sans-serif;
+    font-size: 280px;
+    font-weight: 400;
+    letter-spacing: -12px;
+
+    position: absolute;
+    top: 440px;
+    left: 45%;
+    transform: translateX(-50%);
+    transform: scaleY(1.35);
+    color: white;
+
+    z-index: 10;
+}
+
+
+/* =========================================
+   UNIVERSAL IMAGE CARD
+========================================= */
+/* MAGAZINE WRAPPER */
+.magazine-section {
+    display: flex;
+    justify-content: center;
+    .hero-wrapper {
+    margin-top: 200px;
+}
+}
+
+.magazine-frame {
+    width: 90%;
+    padding: 50px;
+    border: 2px solid #c6392d;
+    border-radius: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+
+    /* фон як на твоєму макеті */
+    background: #1a1a1a;
+}
+
+/* IMAGES */
+.mag-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* RIGHT PANEL TEXT */
+.mag-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.mag-info h2 {
+    font-size: 52px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+/* RED TAG */
+.rev {
+    font-size: 42px;
+    font-weight: 900;
+    color: #ff3b2f;
+    align-self: flex-end;
+}
+.img-card {
+    width: 100%;
+ 
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-card.large     { aspect-ratio: 4/5; }
+.img-card.tall      { aspect-ratio: 3/4; }
+.img-card.vertical  { aspect-ratio: 4/6; }
+.img-card.wide      { aspect-ratio: 16/9; }
+
+.img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.label {
+    position: absolute;
+    bottom: 26px;
+    left: 26px;
+    font-size: 34px;
+    font-weight: 900;
+}
+.tag {
+    color: #ff3b2f;
+}
+
+
+/* =========================================
+   GRIDS
+========================================= */
+
+.two-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.affiches-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 70px;
+}
+
+
+/* =========================================
+   AFFICHES
+========================================= */
+/* =========================================
+   AFFICHES — NEW LAYOUT LIKE YOUR SCREENSHOT
+========================================= */
+
+.affiches-two-col {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* LEFT IMAGE */
+.affiche-left img {
+    width: 100%;
+    border-radius: 14px;
+}
+
+/* TITLE ON THE RIGHT */
+.affiches-title-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.affiches-title-big {
+    font-family: "Anton", sans-serif;
+    font-size: 210px;
+    line-height: 0.82;
+    font-weight: 900;
+}
+
+.affiches-et {
+    font-family: "Anton", sans-serif;
+    font-size: 160px;
+    color: #ff3b2f;
+    font-weight: 900;
+    margin-top: 18px;
+}
+
+/* RIGHT IMAGE (PSYCHO) */
+.affiche-psycho {
+    width: 100%;
+    border-radius: 16px;
+    margin-top: 20px;
+}
+
+/* =========================================
+   PHOTO
+========================================= */
+
+/* ============================
+   PHOTO SECTION 
+============================ */
+
+.photo-section {
+    padding: 160px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Головна сітка з карток */
+.photo-grid {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    width: fit-content;     /* головне, щоб картки реально ставали по центру */
+    margin: 0 auto;
+}
+
+/* Одна картка */
+.photo-item {
+    width: 520px;
+    background: #ffffff;
+    border-radius: 38px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+
+    border: 6px solid transparent; /* базова рамка, колір додаємо класами */
+}
+
+/* Квадратне фото */
+.photo-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+/* Заголовок */
+.photo-card h3 {
+    font-size: 42px;
+    font-weight: 900;
+    color: #000;
+    text-align: left;
+    width: 100%;
+}
+
+/* Текст */
+.photo-card p {
+    font-size: 20px;
+    line-height: 1.4;
+    opacity: 0.85;
+    color: #333;
+    text-align: left;
+    width: 100%;
+}
+
+/* Доповнений блок info */
+.photo-info h3 {
+    font-size: 46px;
+    font-weight: 900;
+    color: #000;
+}
+
+.photo-info p {
+    font-size: 26px;
+    line-height: 1.45;
+    color: #333;
+}
+
+
+/* ============================
+   РІЗНІ КОЛЬОРОВІ РАМКИ
+============================ */
+
+/* === PHOTO GRID (щоб рамки не різались) === */
+.photo-section {
+    padding: 160px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.photo-grid {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;        /* 🔥 захист від обрізання рамок */
+    overflow: visible;    /* 🔥 дозволяємо рамці бути повністю видимою */
+}
+
+
+/* === КАРТКА БАЗА === */
+.photo-item {
+    width: 520px;
+    border-radius: 38px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+}
+
+/* КВАДРАТНЕ ФОТО */
+.photo-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+/* ТЕКСТ */
+.photo-info h3 {
+    font-size: 46px;
+    font-weight: 900;
+    color: #000;
+    width: 100%;
+}
+
+.photo-info p {
+    font-size: 26px;
+    line-height: 1.45;
+    color: #333;
+    opacity: 0.9;
+    width: 100%;
+}
+
+
+/* === 1) БІЛА КАРТКА З ЧОРНОЮ РАМКОЮ === */
+.photo-item.white {
+    background: #ffffff;
+    border: 6px solid #000 !important;   /* 🔥 гарантуємо чорну рамку */
+}
+
+
+/* === 2) СІРА КАРТКА З БІЛОЮ РАМКОЮ === */
+.photo-item.gray {
+    background: #4a4a4a;
+    border: 6px solid #ffffff !important;
+}
+
+.photo-item.gray h3,
+.photo-item.gray p {
+    color: #fff;
+}
+
+
+
+/* ================= UX SECTION (READY) ================= */
+/* ================= UX SECTION (GRID 2 ROWS) ================= */
+
+.ux-section{
+  padding: 120px 0;
+}
+
+.ux-grid{
+  display:grid;
+  grid-template-columns: 520px 220px 1fr; /* рухай тут */
+  grid-template-rows: 320px 360px;        /* рухай тут */
+  gap: 40px;                               /* рухай тут */
+  align-items: stretch;
+}
+
+.ux-item{
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  background: #111; /* щоб не було "пустого" чорного */
+}
+
+.ux-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+
+/* порядок */
+.ux-text   { grid-column: 1; grid-row: 1; }
+.ux-vert   { grid-column: 2; grid-row: 1; }
+.ux-phones { grid-column: 3; grid-row: 1; }
+.ux-bike   { grid-column: 1 / span 2; grid-row: 2; }
+.ux-audi   { grid-column: 3; grid-row: 2; }
+
+/* текстова картка */
+
+.ux-text{
+  background:#3f3f3f;
+  border: 4px solid rgba(255,255,255,0.9);
+  border-radius: 42px;
+  padding: 48px;
+  display:flex;
+  align-items:center;       /* вертикально */
+  justify-content:center;   /* горизонтально */
+}
+
+
+
+.ux-word{
+  font-family:"Anton",sans-serif;
+  color:#fff;
+  text-transform:uppercase;
+  line-height: 0.82;
+  letter-spacing: -6px;
+}
+.ux-text-inner{
+  display:flex;
+  flex-direction:column;
+  gap: 12px;              /* нормальна відстань між UX / DESIGN */
+  transform: translateY(6px); /* 🔧 ОПУСТИЛИ, а не підняли */
+}
+
+.ux-word--ux{ font-size: 140px; }
+.ux-word--design{ font-size: 170px; }
+
+/* вертикалка */
+.ux-vert img{
+  object-fit: contain; /* якщо треба cover — поміняєш */
+  background: transparent;
+}
+/* =========================================
+   BEYOND DESIGN (FINAL SECTION)
+========================================= */
+
+.beyond-final-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.beyond-big {
+    width: 100%;
+    border-radius: 18px;
+    display: block;
+}
+
+.beyond-right-final {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* UNIFIED ICON SIZE */
+.beyond-right-final img {
+    width: 120px !important;
+    height: 120px !important;
+    object-fit: contain !important;
+}
+
+.icon-row {
+    display: flex;
+    gap: 30px;
+}
+
+.icon-solo img {
+    margin: 0 auto;
+}
+
+.credits-final {
+    font-size: 26px;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+/* PAP LOGO RIGHT */
+.pap-logo {
+    width: 180px;
+    align-self: flex-end;
+    opacity: 0.9;
+    height: auto;
+    margin-top: 40px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    text-align: center;
+    padding: 80px 0;
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   REVEAL ANIMATION (FINAL CLEAN VERSION)
+========================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(10px) brightness(0.55);
+  transition:
+    opacity 700ms ease,
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 900ms ease;
+  will-change: opacity, transform, filter;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0) brightness(1);
+}
+/* ==== SOCIAL ICONS (LinkedIn + Gmail) ==== */
+
+.social-icon {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Gmail в PNG сидить “меншим”, тому трохи масштабуємо */
+.social-icon--gmail {
+    transform: scale(1.12);
+    transform-origin: center;
+}
+
+/* LinkedIn лишаємо як є (можеш злегка зменшити, якщо треба) */
+.social-icon--linkedin {
+    transform: scale(0.8);
+}
+/* =========================================
+   BEYOND FINAL LAYOUT (точно як макет)
+========================================= */
+
+.beyond-final-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.beyond-left-final img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* ===== RIGHT SIDE STRUCTURE ===== */
+
+/* === ПРАВА КОЛОНКА ЯК ВЕРТИКАЛЬНИЙ БЛОК === */
+.beyond-final-grid {
+    position: relative;
+}
+
+/* ====== ПРАВА ЧАСТИНА В РУЧНОМУ РЕЖИМІ ====== */
+.beyond-right-final {
+    position: relative;
+    width: 100%;
+    height: 650px; /* висоту можеш міняти */
+}
+
+
+/* ====== TOP ICONS (LinkedIn + Gmail) ====== */
+#icon-linkedin {
+    position: absolute;
+    top: 150px;   /* РУХАЙ */
+    left: -60px;  /* РУХАЙ */
+    width: 140px;
+    scale: 0.75;
+}
+
+#icon-mail {
+    position: absolute;
+    top: 150px;    /* РУХАЙ */
+    left: 60px;  /* РУХАЙ */
+    width: 140px;
+}
+
+
+/* ====== EYE ICON ====== */
+#icon-eye {
+    position: absolute;
+    top: 360px;   /* РУХАЙ */
+    left: 0px;  /* РУХАЙ */
+    
+    scale: 2.3;
+}
+
+
+/* ====== TEXT BLOCK ====== */
+.credits-final {
+    position: absolute;
+    top: 500px;   /* РУХАЙ */
+    left: -60px;   /* РУХАЙ */
+    font-size: 30px;
+    font-weight: 300;
+}
+
+
+/* ====== PAP LOGO ====== */
+.pap-logo {
+    position: absolute;
+    bottom: 0px;  /* РУХАЙ */
+    right: 0px;   /* РУХАЙ */
+    width: 200px;
+}
+
+.icon-row a,
+.icon-solo a {
+    display: block;
+}
+
+.icon-row img,
+.icon-solo img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    display: block;
+}
+
+.icon-row a:hover img,
+.icon-solo a:hover img {
+    opacity: 0.8;
+    transition: 0.2s;
+}
+/* ===== AFFICHES & POSTERS (2 колонки, як у макеті) ===== */
+
+.affiches-section {
+  padding-top: 120px;
+}
+
+/* дві колонки: ліворуч running, праворуч заголовок + psycho */
+.affiches-two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  column-gap: 60px;
+  align-items: flex-start;
+}
+
+/* LEFT IMAGE */
+.affiche-left img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+}
+
+/* RIGHT SIDE */
+
+.affiche-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Контейнер заголовка + ET */
+.affiches-title-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px; /* відстань між текстом і ET */
+  margin-left: -40px; /* РУЧНИЙ ЗСУВ ВЛІВО */
+  margin-bottom: 30px;
+}
+
+/* AFFICHES POSTERS */
+.affiches-title-big {
+  font-family: "Anton", sans-serif;
+  font-size: 160px;
+  line-height: 0.9;
+  font-weight: 100;
+  letter-spacing: -10px;
+  text-transform: uppercase;
+}
+
+/* Червоне ET */
+.affiches-et {
+  font-family: "Anton", sans-serif;
+  font-size: 180px;
+  color: #ff3b2f;
+  font-weight: 900;
+  margin-top: 18px;
+}
+
+/* нижній постер (American Psycho) під заголовком */
+.affiche-psycho {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+  margin-top: 24px;
+}
+/* ===== BLUE BACKGROUND ONLY FOR EYE ===== */
+
+#icon-eye{
+  position: absolute; /* у тебе вже є, але лишаємо */
+  top: 360px;
+  left: 0px;
+  scale: 2.3;
+
+  /* щоб псевдоелемент працював */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* СИНІЙ ПРЯМОКУТНИК */
+#icon-eye::before{
+  content: "";
+  position: absolute;
+  inset: -35px -55px; /* 🔧 розмір фону — РУХАЙ */
+
+  background: linear-gradient(135deg, #4a5cff, #2f3bdc);
+  border-radius: 28px;
+
+  box-shadow:
+    0 20px 40px rgba(70,90,255,0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.15);
+
+  z-index: 5; /* 🔥 фон ПІД оком */
+}
+
+/* САМЕ ОКО */
+#icon-eye img{
+  position: relative;
+  z-index: 1;
+  display: block;
+}

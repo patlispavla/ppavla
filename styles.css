@@ -836,3 +836,6 @@ body::before {
   z-index: 1;
   display: block;
 }
+.credits-final {
+  transform: translateX(60px);
+}

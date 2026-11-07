@@ -22,32 +22,27 @@
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
-  <span class="nav-status"><i></i>Open to internships · Feb 2027</span>
 </header>
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <div class="hero-glow" aria-hidden="true">VISUAL</div>
-  <div class="hero-inner">
-    <span class="hero-feel">feel</span>
-    <h1 class="hero-design">DESIGN</h1>
-  </div>
-  <div class="hero-meta">
-    <p><strong>Pavla Patlis</strong> — graphic &amp; visual designer.<br>Posters, editorial, brand visuals, print.</p>
-    <p class="hero-loc">Davis, California · Bordeaux</p>
-  </div>
-  <a href="#work" class="hero-scroll" aria-label="Scroll to work">Scroll <span>↓</span></a>
+  <h1 class="sr-only">Pavla Patlis — feel visual design</h1>
+  <svg class="lockup" viewBox="0 0 1033 657" aria-hidden="true">
+    <defs>
+      <filter id="glow" x="-20%" y="-30%" width="140%" height="160%">
+        <feGaussianBlur stdDeviation="16">
+          <animate attributeName="stdDeviation" values="14;20;14" dur="6s" repeatCount="indefinite"/>
+        </feGaussianBlur>
+      </filter>
+    </defs>
+    <g class="lk-visual"><text x="55" y="368" textLength="930" lengthAdjust="spacingAndGlyphs" filter="url(#glow)">VISUAL</text></g>
+    <text class="lk-feel" x="46" y="133" textLength="272" lengthAdjust="spacingAndGlyphs">feel</text>
+    <text class="lk-design" x="418" y="610" textLength="558" lengthAdjust="spacingAndGlyphs">DESIGN</text>
+  </svg>
+  <a href="#work" class="hero-scroll" aria-label="Scroll to work">Work <span>↓</span></a>
 </section>
 
-<!-- ============ MARQUEE ============ -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>POSTERS ✦ EDITORIAL ✦ BRAND VISUALS ✦ SOCIAL MEDIA ✦ CYANOTYPE ✦ SCREEN PRINT ✦ PHOTOGRAPHY ✦ UI ✦ </span>
-    <span>POSTERS ✦ EDITORIAL ✦ BRAND VISUALS ✦ SOCIAL MEDIA ✦ CYANOTYPE ✦ SCREEN PRINT ✦ PHOTOGRAPHY ✦ UI ✦ </span>
-  </div>
-</div>
-
-<!-- ============ WORK: SHELF ============ -->
+<!-- ============ WORK: GRID ============ -->
 <section class="work" id="work">
   <div class="section-head reveal">
     <h2 class="section-title">Selected<br><em>work</em></h2>
@@ -55,27 +50,14 @@
       <button class="is-on" data-filter="all">All</button>
       <button data-filter="brand">Brand &amp; Social</button>
       <button data-filter="poster">Posters</button>
-      <button data-filter="art">Installation &amp; 3D</button>
+      <button data-filter="ui">UI</button>
       <button data-filter="editorial">Editorial</button>
+      <button data-filter="art">Installation &amp; 3D</button>
       <button data-filter="film">Film</button>
       <button data-filter="print">Print &amp; Photo</button>
-      <button data-filter="ui">UI</button>
     </div>
   </div>
-
-  <div class="shelf-wrap reveal">
-    <button class="shelf-arrow prev" aria-label="Previous project">←</button>
-    <div class="shelf" id="shelf"></div>
-    <button class="shelf-arrow next" aria-label="Next project">→</button>
-  </div>
-
-  <div class="shelf-caption" id="caption" aria-live="polite">
-    <span class="cap-num"></span>
-    <h3 class="cap-title"></h3>
-    <p class="cap-tags"></p>
-    <button class="cap-open">View project <span>→</span></button>
-  </div>
-  <p class="shelf-hint">Click a spine · use ← → keys</p>
+  <div class="grid" id="grid"></div>
 </section>
 
 <!-- ============ ABOUT ============ -->
@@ -126,27 +108,7 @@
   </footer>
 </section>
 
-<!-- ============ PROJECT MODAL ============ -->
-<div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="modal-bg" data-close></div>
-  <article class="modal-card">
-    <button class="modal-close" data-close aria-label="Close">✕</button>
-    <header class="modal-head">
-      <span class="modal-num"></span>
-      <h3 class="modal-title"></h3>
-      <p class="modal-tags"></p>
-    </header>
-    <div class="modal-body">
-      <p class="modal-text"></p>
-      <div class="modal-imgs"></div>
-    </div>
-    <footer class="modal-nav">
-      <button class="modal-prev">← Previous</button>
-      <button class="modal-next">Next →</button>
-    </footer>
-  </article>
-</div>
-
+<script src="v2-data.js"></script>
 <script src="v2.js"></script>
 </body>
 </html>

@@ -225,6 +225,13 @@
   .cert-list a:hover{color:var(--red2)}
   .cert-list li span:last-child{font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#858184;white-space:nowrap;align-self:center}
   @media(max-width:460px){.cert-list li{flex-direction:column;gap:3px}.cert-list li span:last-child{align-self:flex-start}}
+  /* VISUAL grows on hover (desktop) */
+  @media(hover:hover) and (pointer:fine){
+    .hero-feel,.hero-design{pointer-events:none}
+    .hero-visual{scale:1;transform-origin:50% 55%;transition:scale .6s cubic-bezier(.2,.8,.2,1),color .6s;cursor:default}
+    .hero-visual:hover{scale:1.1;color:rgba(240,72,54,1)}
+  }
+  @media(prefers-reduced-motion:reduce){.hero-visual:hover{scale:1}}
 </style>
 </head>
 <body>

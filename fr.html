@@ -197,7 +197,7 @@
   .archive-links a:hover{color:var(--red2);padding-left:36px}
   @media(max-width:760px){.archive{grid-template-columns:1fr;margin:44px 0 30px}.archive-links-inner{position:static;transform:none;margin-top:20px}.archive-links a{padding-left:4px}}
 
-  .hero-design{right:5%}
+  .hero-design{right:2%}
   @media(max-width:760px){.hero-design{right:0}}
 
   /* hero: equal glyph gaps feel→VISUAL→DESIGN (Anton/Inter metrics), sizes tied to --s */
@@ -228,10 +228,10 @@
   /* VISUAL grows on hover (desktop) */
   @media(hover:hover) and (pointer:fine){
     .hero-feel,.hero-design{pointer-events:none}
-    .hero-visual{scale:1;transform-origin:50% 55%;transition:scale .6s cubic-bezier(.2,.8,.2,1),color .6s;cursor:default}
-    .hero-visual:hover{scale:1.1;color:rgba(240,72,54,1)}
+    .hero-visual{transform-origin:50% 55%;transition:transform .6s cubic-bezier(.2,.8,.2,1),color .6s;cursor:default}
+    .hero-visual:hover{transform:translateX(-50%) scaleX(.98) scale(1.1);color:rgba(240,72,54,1)}
   }
-  @media(prefers-reduced-motion:reduce){.hero-visual:hover{scale:1}}
+  @media(prefers-reduced-motion:reduce){.hero-visual:hover{transform:translateX(-50%) scaleX(.98)}}
 </style>
 </head>
 <body>
